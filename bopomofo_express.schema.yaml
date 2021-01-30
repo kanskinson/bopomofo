@@ -1,0 +1,26 @@
+# Rime schema
+# encoding: utf-8
+
+__include: bopomofo.schema:/
+
+schema:
+  schema_id: bopomofo_express
+  name: 注音·快打
+  version: '2.3'
+  author:
+    - Oxygen IME
+  description: |
+    注音符号输入，采用【大千式】键盘排列。
+
+    本方案采用【无模式】设计，以大写字母键或上下方向键、回车键选词；
+    空格键输入第一声，标记为【ˉ】。 
+
+speller:
+  algebra:
+    __patch:
+      - zhuyin:/pinyin_to_zhuyin
+      - zhuyin:/abbreviation
+      - zhuyin:/keymap_bopomofo
+
+translator:
+  prism: bopomofo_express
